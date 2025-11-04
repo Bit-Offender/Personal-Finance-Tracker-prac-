@@ -1,66 +1,57 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import { Button } from "@/components/ui/button"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { ChartPie } from 'lucide-react'
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+  return(
+    <div className="grid grid-cols-[525px_1fr_1fr] gap-5 mt-8 p-5">
+      <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
+          <CardHeader>
+            <CardTitle className="text-center">Monthly Net</CardTitle>
+            <CardDescription className="text-semibold text-center">Graph of your savings and expenses these few months</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <h1 className='text-5xl text-center'>$20K Lorem ipsum dolor sit amet.</h1>
+          </CardContent>
+          <CardFooter className="flex flex-col gap-3">
+            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500">Check 3 months</Button>
+            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500">Check 6 months</Button>
+          </CardFooter>
+      </Card>
+      <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
+          <CardHeader>
+            <CardTitle>
+              <div className="flex gap-4 items-center">
+                <ChartPie size={25}/> 
+                <h1 className='text-center justify-self-center'>Income Breakdown</h1>
+              </div>
+            </CardTitle>
+            <CardContent>
+              <h1 className='text-5xl text-center mt-16'>$14.7K</h1>
+            </CardContent>
+          </CardHeader>
+      </Card>
+      <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
+        <CardHeader>
+            <CardTitle>
+              <div className="flex gap-4 items-center">
+                <ChartPie size={25}/> 
+                <h1 className='text-center justify-self-center'>Expenses Breakdown</h1>
+              </div>
+            </CardTitle>
+            <CardContent>
+              <h1 className='text-5xl text-center mt-16'>$5.3K</h1>
+            </CardContent>
+          </CardHeader>
+      </Card>
     </div>
   );
 }
+
