@@ -13,43 +13,43 @@ export default function Home() {
   return(
     <div className="grid grid-cols-[525px_1fr_1fr] gap-5 mt-8 p-5">
       <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
-          <CardHeader>
-            <CardTitle className="text-center">Monthly Net</CardTitle>
-            <CardDescription className="text-semibold text-center">Graph of your savings and expenses these few months</CardDescription>
+          <CardHeader className="w-100 bg-green-400 rounded-t-lg border-b-2 border-gray-500 pb-2">
+            <CardTitle className="text-center font-semibold dark:text-[#F9F5EF]">Monthly Net</CardTitle>
+            <CardDescription className="text-semibold text-center dark:text-[#F9F5EF]">Graph of your savings and expenses these few months</CardDescription>
           </CardHeader>
-          <CardContent>
-            <h1 className='text-5xl text-center'>$20K Lorem ipsum dolor sit amet.</h1>
+          <CardContent className="pt-3">
+            <h1 className='text-5xl text-center dark:text-[#F9F5EF]'>$20K Lorem ipsum dolor sit amet.</h1>
           </CardContent>
           <CardFooter className="flex flex-col gap-3">
-            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500">Check 3 months</Button>
-            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500">Check 6 months</Button>
+            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500 hover:scale-105 transition-all duration-500">Check 3 months</Button>
+            <Button type="submit"  className="flex flex-col gap-3 bg-green-400 text-foreground/80 text-black hover:text-foreground hover:bg-green-500 hover:scale-105 transition-all duration-500">Check 6 months</Button>
           </CardFooter>
       </Card>
       <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
-          <CardHeader>
+          <CardHeader className="w-100 bg-green-400 rounded-t-lg border-b-2 border-gray-500">
             <CardTitle>
               <div className="flex gap-4 items-center">
-                <ChartPie size={25}/> 
-                <h1 className='text-center justify-self-center'>Income Breakdown</h1>
+                <ChartPie size={25} className="dark:text-[#F9F5EF]"/> 
+                <h1 className='text-center justify-self-center dark:text-[#F9F5EF]'>Income Breakdown</h1>
               </div>
             </CardTitle>
-            <CardContent>
-              <h1 className='text-5xl text-center mt-16'>$14.7K</h1>
-            </CardContent>
           </CardHeader>
+          <CardContent>
+              <h1 className='text-5xl text-center mt-16 dark:text-[#F9F5EF]'>$14.7K</h1>
+          </CardContent>
       </Card>
       <Card className='shadow-xl hover:scale-105 transition-all duration-700'>
-        <CardHeader>
+        <CardHeader className="w-100 bg-green-400 rounded-t-lg border-b-2 border-gray-500">
             <CardTitle>
               <div className="flex gap-4 items-center">
-                <ChartPie size={25}/> 
-                <h1 className='text-center justify-self-center'>Expenses Breakdown</h1>
+                <ChartPie size={25} className="dark:text-[#F9F5EF]"/> 
+                <h1 className='text-center justify-self-center dark:text-[#F9F5EF]'>Expenses Breakdown</h1>
               </div>
             </CardTitle>
-            <CardContent>
-              <h1 className='text-5xl text-center mt-16'>$5.3K</h1>
-            </CardContent>
-          </CardHeader>
+        </CardHeader>
+        <CardContent>
+              <h1 className='text-5xl text-center mt-16 dark:text-[#F9F5EF]'>$5.3K</h1>
+        </CardContent>  
       </Card>
     </div>
   );
