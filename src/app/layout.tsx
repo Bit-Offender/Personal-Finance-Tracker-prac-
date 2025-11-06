@@ -4,6 +4,8 @@ import "./globals.css";
 import Image from 'next/image';
 import { ThemeProvider } from "next-themes";
 import { ThemeToggle } from "@/app/themetoggle";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "FinTrack",
@@ -20,49 +22,11 @@ export default function RootLayout({
         <body className="bg-[#F9F5EF] dark:bg-black">
           <ThemeProvider attribute="class" enableSystem defaultTheme="system">
             <div className="bg-[#F9F5EF] text-[#1B3A2F] dark:bg-black dark:text-white transition-all duration-400">
-              <header className="sticky top-0 z-50 bg-green-500/70 dark:bg-neutral-800/30 backdrop-blur-lg dark:backdrop-blur-lg border-b-2 border-gray-700">
-                <nav className="navbar flex justify-between p-4">
-                  <ul className="main-nav flex items-center gap-7 mt-1">
-                    <li>
-                      <Link href='/'>
-                        <Image src='/logo.png' alt='logo' width={55} height={50}/>
-                      </Link>
-                    </li>
-                    <li>
-                        <Link href='/' className='tracking-wide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group'>
-                        Home
-                        <span className="absolute bottom-[-3px] left-0 w-0 h-0.5 bg-gradient-to-r from-[#004D40] to-[#00796B] dark:bg-gradient-to-r dark:from-[#FFB300] dark:to-[#FFD54F] group-hover:w-full transition-all duration-300"/>
-                        </Link>
-                    </li>
-                    <li>
-                      <Link href='/about' className='tracking-wide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group'>
-                        About Us
-                        <span className="absolute bottom-[-3px] left-0 w-0 h-0.5 bg-gradient-to-r from-[#004D40] to-[#00796B] dark:bg-gradient-to-r dark:from-[#FFB300] dark:to-[#FFD54F] group-hover:w-full transition-all duration-300"/>
-                        </Link>
-                    </li>
-                    <li>
-                      <Link href='/contacts' className='tracking-wide text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group'>
-                        Contact Us
-                        <span className="absolute bottom-[-3px] left-0 w-0 h-0.5 bg-gradient-to-r from-[#004D40] to-[#00796B] dark:bg-gradient-to-r dark:from-[#FFB300] dark:to-[#FFD54F] group-hover:w-full transition-all duration-300"/>
-                        </Link>
-                    </li>
-                  </ul>
-                  <ul className="sidenav flex items-center justify-center pr-4">
-                    <li>
-                      <ThemeToggle/>
-                    </li>
-                  </ul>
-                </nav>
-              </header>
+              <NavBar></NavBar>
               <div className="min-h-screen">
                 {children}
               </div>
-            
-              <footer>
-                <div className='bg-green-400 p-4 dark:bg-neutral-800/30 border-t-2 border-gray-700'>
-                  <h1 className="text-2xl flex items-center justify-center font-mono">&copy; 2025 FinTrack All Rights Reserved</h1>
-                </div>
-              </footer>
+              <Footer></Footer>
             </div>
           </ThemeProvider>
         </body>
